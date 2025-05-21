@@ -585,7 +585,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Server Side</h3>
                 <div className="space-y-4">
-                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
+                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm overflow-x-auto">
                     <pre className="whitespace-pre">
                       <span className="text-green-500">
                         {/* server/api/router.ts */}
@@ -616,17 +616,13 @@ export default function Home() {
                       <span className="text-emerald-500">object</span>({"{"}
                       name: <span className="text-emerald-500">z</span>.
                       <span className="text-emerald-500">string</span>()
-                      {"}"})) .<span className="text-emerald-500">query</span>((
-                      {"{"}input{"}"}) {"=>"} {"{"}
+                      {"}"}) ) .<span className="text-emerald-500">query</span>
+                      (({"{"}input{"}"}) {"=>"} {"{"}
                       <span className="text-blue-500">return</span> `Hello $
-                      {"{"}input.name{"}"}`;
-                      {"}"}){"}"});
-                      <span className="text-green-500">
-                        {/* Type inference works out of the box! */}
-                      </span>
+                      {"{"}input.name{"}"}`{"}"}){"}"});
                       <span className="text-blue-500">export type</span>{" "}
                       <span className="text-emerald-500">AppRouter</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
+                      <span className="text-blue-500">=</span>
                       <span className="text-blue-500">typeof</span> appRouter;
                     </pre>
                   </div>
@@ -635,7 +631,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Client Side</h3>
                 <div className="space-y-4">
-                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
+                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm overflow-x-auto">
                     <pre className="whitespace-pre">
                       <span className="text-green-500">
                         {/* client/index.ts */}
@@ -665,9 +661,6 @@ export default function Home() {
                       name:{" "}
                       <span className="text-orange-400">&apos;John&apos;</span>
                       {"}"});
-                      <span className="text-green-500">
-                        {/* res is typed as 'Hello ' + string */}
-                      </span>
                     </pre>
                   </div>
                 </div>
