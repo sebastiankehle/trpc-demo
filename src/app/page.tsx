@@ -584,85 +584,91 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Server Side</h3>
-                <div className="space-y-4">
-                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm overflow-x-auto">
-                    <pre className="whitespace-pre">
-                      <span className="text-green-500">
-                        {/* server/api/router.ts */}
-                      </span>
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">t</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-emerald-500">initTRPC</span>.
-                      <span className="text-emerald-500">create</span>();
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">router</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-emerald-500">t</span>.
-                      <span className="text-emerald-500">router</span>;
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">publicProcedure</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-emerald-500">t</span>.
-                      <span className="text-emerald-500">procedure</span>;
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">appRouter</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-emerald-500">router</span>({"{"}
-                      <span className="text-emerald-500">greeting</span>:{" "}
-                      <span className="text-emerald-500">publicProcedure</span>.
-                      <span className="text-emerald-500">input</span>(
-                      <span className="text-emerald-500">z</span>.
-                      <span className="text-emerald-500">object</span>({"{"}
-                      name: <span className="text-emerald-500">z</span>.
-                      <span className="text-emerald-500">string</span>()
-                      {"}"}) ) .<span className="text-emerald-500">query</span>
-                      (({"{"}input{"}"}) {"=>"} {"{"}
-                      <span className="text-blue-500">return</span> `Hello $
-                      {"{"}input.name{"}"}`{"}"}){"}"});
-                      <span className="text-blue-500">export type</span>{" "}
-                      <span className="text-emerald-500">AppRouter</span>{" "}
-                      <span className="text-blue-500">=</span>
-                      <span className="text-blue-500">typeof</span> appRouter;
-                    </pre>
-                  </div>
+                <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
+                  <pre>
+                    <span className="text-green-500">
+                      {/* server/api/router.ts */}
+                    </span>
+                    {"\n\n"}
+                    <span className="text-blue-500">const</span>{" "}
+                    <span className="text-emerald-500">t</span> =
+                    <span className="text-emerald-500">initTRPC</span>.
+                    <span className="text-emerald-500">create</span>();
+                    {"\n"}
+                    <span className="text-blue-500">const</span>{" "}
+                    <span className="text-emerald-500">router</span> =
+                    <span className="text-emerald-500">t</span>.
+                    <span className="text-emerald-500">router</span>;{"\n"}
+                    <span className="text-blue-500">const</span>{" "}
+                    <span className="text-emerald-500">publicProcedure</span> =
+                    <span className="text-emerald-500">t</span>.
+                    <span className="text-emerald-500">procedure</span>;{"\n\n"}
+                    <span className="text-blue-500">const</span>{" "}
+                    <span className="text-emerald-500">appRouter</span> =
+                    <span className="text-emerald-500">router</span>({"{"}
+                    {"\n  "}
+                    <span className="text-emerald-500">greeting</span>:
+                    <span className="text-emerald-500">publicProcedure</span>
+                    {"\n    "}.<span className="text-emerald-500">input</span>(
+                    <span className="text-emerald-500">z</span>.
+                    <span className="text-emerald-500">object</span>({"{"}
+                    {"\n      "}name:{" "}
+                    <span className="text-emerald-500">z</span>.
+                    <span className="text-emerald-500">string</span>()
+                    {"\n    "}
+                    {"}"}) ){"\n    "}.
+                    <span className="text-emerald-500">query</span>( ({"{"}input
+                    {"}"}) <span className="text-blue-500">=&gt;</span> {"{"}
+                    {"\n      "}
+                    <span className="text-blue-500">return</span> `Hello ${"{"}
+                    input.name{"}"}`;
+                    {"\n    "}
+                    {"}"}){"\n"}
+                    {"}"});
+                    {"\n\n"}
+                    <span className="text-blue-500">export type</span>{" "}
+                    <span className="text-emerald-500">AppRouter</span> =
+                    <span className="text-blue-500">typeof</span>{" "}
+                    <span className="text-emerald-500">appRouter</span>;
+                  </pre>
                 </div>
               </div>
+
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Client Side</h3>
-                <div className="space-y-4">
-                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm overflow-x-auto">
-                    <pre className="whitespace-pre">
-                      <span className="text-green-500">
-                        {/* client/index.ts */}
-                      </span>
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">trpc</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-emerald-500">createTRPCClient</span>
-                      <span className="text-orange-400">&lt;</span>
-                      <span className="text-emerald-500">AppRouter</span>
-                      <span className="text-orange-400">&gt;</span>({"{"}
-                      links: [
-                      <span className="text-emerald-500">httpBatchLink</span>(
-                      {"{"}
-                      url:{" "}
-                      <span className="text-orange-400">
-                        &apos;http://localhost:3000&apos;
-                      </span>
-                      {"}"}) ]{"}"});
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">res</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">greeting</span>.
-                      <span className="text-emerald-500">query</span>({"{"}
-                      name:{" "}
-                      <span className="text-orange-400">&apos;John&apos;</span>
-                      {"}"});
-                    </pre>
-                  </div>
+                <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
+                  <pre>
+                    <span className="text-green-500">
+                      {/* client/index.ts */}
+                    </span>
+                    {"\n\n"}
+                    <span className="text-blue-500">const</span>{" "}
+                    <span className="text-emerald-500">trpc</span> =
+                    <span className="text-emerald-500">createTRPCClient</span>
+                    <span className="text-orange-400">&lt;</span>
+                    <span className="text-emerald-500">AppRouter</span>
+                    <span className="text-orange-400">&gt;</span>({"{"}
+                    {"\n  "}links: [{"\n    "}
+                    <span className="text-emerald-500">httpBatchLink</span>(
+                    {"{"}
+                    {"\n      "}url:{" "}
+                    <span className="text-orange-400">
+                      &apos;http://localhost:3000&apos;
+                    </span>
+                    {"\n    "}
+                    {"}"}){"\n  "}]{"\n"}
+                    {"}"});
+                    {"\n\n"}
+                    <span className="text-blue-500">const</span>{" "}
+                    <span className="text-emerald-500">res</span> =
+                    <span className="text-blue-500">await</span>{" "}
+                    <span className="text-emerald-500">trpc</span>
+                    {"\n  "}.<span className="text-emerald-500">greeting</span>
+                    {"\n  "}.<span className="text-emerald-500">query</span>(
+                    {"{"}name:{" "}
+                    <span className="text-orange-400">&apos;John&apos;</span>
+                    {"}"});
+                  </pre>
                 </div>
               </div>
             </div>
