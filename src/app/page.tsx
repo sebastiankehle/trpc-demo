@@ -158,12 +158,34 @@ export default function Home() {
               </p>
 
               {/* Feature list */}
-              <ul className="list-disc list-inside space-y-2 mt-4">
-                <li>End-to-end type safety without schemas</li>
-                <li>Automatic type inference</li>
-                <li>Zero runtime overhead</li>
-                <li>Great developer experience</li>
-              </ul>
+              <div className="flex flex-col items-center space-y-4 mt-8">
+                <ul className="space-y-3 text-left">
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">
+                      ✓
+                    </span>
+                    End-to-end type safety without schemas
+                  </li>
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">
+                      ✓
+                    </span>
+                    Automatic type inference
+                  </li>
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">
+                      ✓
+                    </span>
+                    Zero runtime overhead
+                  </li>
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm">
+                      ✓
+                    </span>
+                    Great developer experience
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="grid lg:grid-cols-2 gap-8">
               {[
@@ -254,16 +276,50 @@ export default function Home() {
               </p>
 
               {/* Code example section */}
-              <div className="bg-muted p-4 rounded-lg">
-                <pre className="text-sm overflow-x-auto">
-                  <code>
-                    {`// Traditional API development challenges
-1. Manual type definitions
-2. Schema maintenance
-3. Type synchronization
-4. Runtime type checking`}
-                  </code>
-                </pre>
+              <div className="bg-muted p-6 rounded-lg mt-8">
+                <div className="text-left mb-4">
+                  <h3 className="text-lg font-semibold mb-2">
+                    Traditional API Development Challenges
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="w-5 h-5 rounded-full bg-destructive/10 text-destructive flex items-center justify-center text-sm">
+                        1
+                      </span>
+                      <span>
+                        Manual Type Definitions: Tedious and error-prone process
+                        of defining types for every API endpoint
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="w-5 h-5 rounded-full bg-destructive/10 text-destructive flex items-center justify-center text-sm">
+                        2
+                      </span>
+                      <span>
+                        Schema Maintenance: Keeping API schemas in sync with
+                        implementation
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="w-5 h-5 rounded-full bg-destructive/10 text-destructive flex items-center justify-center text-sm">
+                        3
+                      </span>
+                      <span>
+                        Type Synchronization: Ensuring client and server types
+                        match
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="w-5 h-5 rounded-full bg-destructive/10 text-destructive flex items-center justify-center text-sm">
+                        4
+                      </span>
+                      <span>
+                        Runtime Type Checking: Additional overhead for
+                        validating types at runtime
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -971,17 +1027,6 @@ const user = await trpc.user.getUser.query('123');`}
                   </span>
                 </div>
               </a>
-            </div>
-
-            {/* Documentation links */}
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">Learn More</h3>
-              <div className="space-y-2">
-                <p>
-                  Check out our comprehensive documentation to get started with
-                  tRPC&apos;s powerful features.
-                </p>
-              </div>
             </div>
           </div>
         </section>
