@@ -341,8 +341,8 @@ export default function Home() {
                 tRPC vs alternatives
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
-                Understanding how tRPC compares to other API architectures helps
-                highlight its unique advantages.
+                Understanding how tRPC compares to other API architectures
+                outlines its unique advantages.
               </p>
             </div>
             <div className="grid lg:grid-cols-3 gap-8">
@@ -582,130 +582,110 @@ export default function Home() {
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4">Server Side</h3>
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Server Side</h3>
+                <div className="space-y-4">
                   <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
                     <pre>
+                      {"\n"}
+                      <span className="text-green-500">
+                        {/* server/api/router.ts */}
+                      </span>
+                      {"\n"}
                       <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">userRouter</span>{" "}
+                      <span className="text-emerald-500">t</span>{" "}
+                      <span className="text-blue-500">=</span>{" "}
+                      <span className="text-emerald-500">initTRPC</span>.
+                      <span className="text-emerald-500">create</span>();{"\n"}
+                      <span className="text-blue-500">const</span>{" "}
+                      <span className="text-emerald-500">router</span>{" "}
+                      <span className="text-blue-500">=</span>{" "}
+                      <span className="text-emerald-500">t</span>.
+                      <span className="text-emerald-500">router</span>;{"\n"}
+                      <span className="text-blue-500">const</span>{" "}
+                      <span className="text-emerald-500">publicProcedure</span>{" "}
+                      <span className="text-blue-500">=</span>{" "}
+                      <span className="text-emerald-500">t</span>.
+                      <span className="text-emerald-500">procedure</span>;
+                      {"\n\n"}
+                      <span className="text-blue-500">const</span>{" "}
+                      <span className="text-emerald-500">appRouter</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
                       <span className="text-emerald-500">router</span>({"{"}
                       {"\n  "}
-                      <span className="text-emerald-500">getUser</span>:{" "}
+                      <span className="text-emerald-500">greeting</span>:{" "}
                       <span className="text-emerald-500">publicProcedure</span>
                       {"\n    "}.<span className="text-emerald-500">input</span>
                       (<span className="text-emerald-500">z</span>.
-                      <span className="text-emerald-500">string</span>())
-                      {"\n    "}.<span className="text-emerald-500">query</span>
-                      (<span className="text-blue-500">async</span> ({"{"}
-                      {" input "}
-                      {"}"}) {"=>"} {"{"}
+                      <span className="text-emerald-500">object</span>({"{"}
+                      {"\n      "}name:{" "}
+                      <span className="text-emerald-500">z</span>.
+                      <span className="text-emerald-500">string</span>()
+                      {"\n    "}
+                      {"}"}))<span className="text-emerald-500">.query</span>((
+                      {"{"}input{"}"}) {"=>"} {"{"}
                       {"\n      "}
-                      <span className="text-blue-500">return</span>{" "}
-                      <span className="text-emerald-500">db</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">findUnique</span>({"{"}
-                      {"\n        "}where: {"{"} id: input {"}"}
-                      {"\n      "}
-                      {"}"});{"\n    "}
+                      <span className="text-blue-500">return</span> `Hello $
+                      {"{"}input.name{"}"}`;
+                      {"\n    "}
                       {"}"}){"\n"}
-                      {"}"});{"\n"}
+                      {"}"});
+                      {"\n\n"}
+                      <span className="text-green-500">
+                        {/* Type inference works out of the box! */}
+                      </span>
                       {"\n"}
-                      {/* Use with full type safety */}
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">user</span>{" "}
+                      <span className="text-blue-500">export type</span>{" "}
+                      <span className="text-emerald-500">AppRouter</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">getUser</span>.
-                      <span className="text-emerald-500">query</span>(
-                      <span className="text-orange-400">&apos;123&apos;</span>);
-                      {"\n"}
-                      {"\n"}
-                      {/* TypeScript error if id is not a string */}
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">error</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">getUser</span>.
-                      <span className="text-emerald-500">query</span>(
-                      <span className="text-purple-400">123</span>);
-                      {"\n"}
-                      {"\n"}
-                      {/* Autocomplete for user properties */}
-                      {"\n"}
-                      <span className="text-emerald-500">console</span>.
-                      <span className="text-emerald-500">log</span>(user.name);
+                      <span className="text-blue-500">typeof</span> appRouter;
                     </pre>
                   </div>
                 </div>
               </div>
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4">Client Side</h3>
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Client Side</h3>
+                <div className="space-y-4">
                   <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
                     <pre>
+                      {"\n"}
+                      <span className="text-green-500">
+                        {/* client/index.ts */}
+                      </span>
+                      {"\n"}
                       <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">userRouter</span>{" "}
+                      <span className="text-emerald-500">trpc</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
-                      <span className="text-emerald-500">router</span>({"{"}
-                      {"\n  "}
-                      <span className="text-emerald-500">getUser</span>:{" "}
-                      <span className="text-emerald-500">publicProcedure</span>
-                      {"\n    "}.<span className="text-emerald-500">input</span>
-                      (<span className="text-emerald-500">z</span>.
-                      <span className="text-emerald-500">string</span>())
-                      {"\n    "}.<span className="text-emerald-500">query</span>
-                      (<span className="text-blue-500">async</span> ({"{"}
-                      {" input "}
-                      {"}"}) {"=>"} {"{"}
-                      {"\n      "}
-                      <span className="text-blue-500">return</span>{" "}
-                      <span className="text-emerald-500">db</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">findUnique</span>({"{"}
-                      {"\n        "}where: {"{"} id: input {"}"}
-                      {"\n      "}
-                      {"}"});{"\n    "}
-                      {"}"}){"\n"}
-                      {"}"});{"\n"}
-                      {"\n"}
-                      {/* Use with full type safety */}
-                      {"\n"}
+                      <span className="text-emerald-500">createTRPCClient</span>
+                      <span className="text-orange-400">&lt;</span>
+                      <span className="text-emerald-500">AppRouter</span>
+                      <span className="text-orange-400">&gt;</span>({"{"}
+                      {"\n  "}links: [{"\n    "}
+                      <span className="text-emerald-500">httpBatchLink</span>(
+                      {"{"}
+                      {"\n      "}url:{" "}
+                      <span className="text-orange-400">
+                        &apos;http://localhost:3000&apos;
+                      </span>
+                      {"\n    "}
+                      {"}"}){"\n  "}]{"\n"}
+                      {"}"});
+                      {"\n\n"}
                       <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">user</span>{" "}
+                      <span className="text-emerald-500">res</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
                       <span className="text-blue-500">await</span>{" "}
                       <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">getUser</span>.
-                      <span className="text-emerald-500">query</span>(
-                      <span className="text-orange-400">&apos;123&apos;</span>);
+                      <span className="text-emerald-500">greeting</span>.
+                      <span className="text-emerald-500">query</span>({"{"}
+                      {"\n  "}name:{" "}
+                      <span className="text-orange-400">&apos;John&apos;</span>
                       {"\n"}
+                      {"}"});
                       {"\n"}
-                      {/* TypeScript error if id is not a string */}
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">error</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">getUser</span>.
-                      <span className="text-emerald-500">query</span>(
-                      <span className="text-purple-400">123</span>);
-                      {"\n"}
-                      {"\n"}
-                      {/* Autocomplete for user properties */}
-                      {"\n"}
-                      <span className="text-emerald-500">console</span>.
-                      <span className="text-emerald-500">log</span>(user.name);
+                      <span className="text-green-500">
+                        {/* res is typed as 'Hello ' + string */}
+                      </span>
                     </pre>
                   </div>
                 </div>
@@ -848,8 +828,8 @@ export default function Home() {
                 Developer experience
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
-                tRPC provides an unmatched developer experience that speeds up
-                development and reduces errors.
+                tRPC provides an unmatched development workflow, improving
+                productivity and reducing time to ship.
               </p>
             </div>
             <div className="grid lg:grid-cols-3 gap-8">
