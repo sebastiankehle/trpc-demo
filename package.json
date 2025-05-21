@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-aspect-ratio": "^1.1.7",
     "@radix-ui/react-dropdown-menu": "^2.1.15",
+    "@radix-ui/react-scroll-area": "^1.2.9",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-switch": "^1.2.5",
@@ -22,6 +24,10 @@
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "rehype-pretty-code": "^0.14.1",
+    "shiki": "^3.4.2",
+    "shikiji": "^0.10.2",
+    "simple-icons": "^14.14.0",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
