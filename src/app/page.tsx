@@ -586,55 +586,44 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-6">Server Side</h3>
                 <div className="space-y-4">
                   <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
-                    <pre>
-                      {"\n"}
+                    <pre className="whitespace-pre">
                       <span className="text-green-500">
                         {/* server/api/router.ts */}
                       </span>
-                      {"\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">t</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
                       <span className="text-emerald-500">initTRPC</span>.
-                      <span className="text-emerald-500">create</span>();{"\n"}
+                      <span className="text-emerald-500">create</span>();
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">router</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
                       <span className="text-emerald-500">t</span>.
-                      <span className="text-emerald-500">router</span>;{"\n"}
+                      <span className="text-emerald-500">router</span>;
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">publicProcedure</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
                       <span className="text-emerald-500">t</span>.
                       <span className="text-emerald-500">procedure</span>;
-                      {"\n\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">appRouter</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
                       <span className="text-emerald-500">router</span>({"{"}
-                      {"\n  "}
                       <span className="text-emerald-500">greeting</span>:{" "}
-                      <span className="text-emerald-500">publicProcedure</span>
-                      {"\n    "}.<span className="text-emerald-500">input</span>
-                      (<span className="text-emerald-500">z</span>.
-                      <span className="text-emerald-500">object</span>({"{"}
-                      {"\n      "}name:{" "}
+                      <span className="text-emerald-500">publicProcedure</span>.
+                      <span className="text-emerald-500">input</span>(
                       <span className="text-emerald-500">z</span>.
+                      <span className="text-emerald-500">object</span>({"{"}
+                      name: <span className="text-emerald-500">z</span>.
                       <span className="text-emerald-500">string</span>()
-                      {"\n    "}
-                      {"}"}))<span className="text-emerald-500">.query</span>((
+                      {"}"})) .<span className="text-emerald-500">query</span>((
                       {"{"}input{"}"}) {"=>"} {"{"}
-                      {"\n      "}
                       <span className="text-blue-500">return</span> `Hello $
                       {"{"}input.name{"}"}`;
-                      {"\n    "}
-                      {"}"}){"\n"}
-                      {"}"});
-                      {"\n\n"}
+                      {"}"}){"}"});
                       <span className="text-green-500">
                         {/* Type inference works out of the box! */}
                       </span>
-                      {"\n"}
                       <span className="text-blue-500">export type</span>{" "}
                       <span className="text-emerald-500">AppRouter</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
@@ -647,12 +636,10 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-6">Client Side</h3>
                 <div className="space-y-4">
                   <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
-                    <pre>
-                      {"\n"}
+                    <pre className="whitespace-pre">
                       <span className="text-green-500">
                         {/* client/index.ts */}
                       </span>
-                      {"\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">trpc</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
@@ -660,17 +647,14 @@ export default function Home() {
                       <span className="text-orange-400">&lt;</span>
                       <span className="text-emerald-500">AppRouter</span>
                       <span className="text-orange-400">&gt;</span>({"{"}
-                      {"\n  "}links: [{"\n    "}
+                      links: [
                       <span className="text-emerald-500">httpBatchLink</span>(
                       {"{"}
-                      {"\n      "}url:{" "}
+                      url:{" "}
                       <span className="text-orange-400">
                         &apos;http://localhost:3000&apos;
                       </span>
-                      {"\n    "}
-                      {"}"}){"\n  "}]{"\n"}
-                      {"}"});
-                      {"\n\n"}
+                      {"}"}) ]{"}"});
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">res</span>{" "}
                       <span className="text-blue-500">=</span>{" "}
@@ -678,11 +662,9 @@ export default function Home() {
                       <span className="text-emerald-500">trpc</span>.
                       <span className="text-emerald-500">greeting</span>.
                       <span className="text-emerald-500">query</span>({"{"}
-                      {"\n  "}name:{" "}
+                      name:{" "}
                       <span className="text-orange-400">&apos;John&apos;</span>
-                      {"\n"}
                       {"}"});
-                      {"\n"}
                       <span className="text-green-500">
                         {/* res is typed as 'Hello ' + string */}
                       </span>
