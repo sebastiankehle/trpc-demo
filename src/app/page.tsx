@@ -12,7 +12,7 @@ export default function Home() {
     "Introduction",
     "What is tRPC?",
     "The Problem",
-    "tRPC vs Alternatives",
+    "tRPC vs alternatives",
     "How tRPC Works",
     "Building with tRPC",
     "Real-World Example",
@@ -116,8 +116,8 @@ export default function Home() {
                     End-to-end typesafe APIs
                   </span>
                   <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-8">
-                    Move Fast and{" "}
-                    <span className="text-primary">Break Nothing</span>
+                    Move fast and{" "}
+                    <span className="text-primary">break nothing - tRPC</span>
                   </h1>
                   <p className="text-muted-foreground">
                     Build APIs with confidence using TypeScript&apos;s powerful
@@ -161,7 +161,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8">
               {[
                 {
-                  title: "How it Works",
+                  title: "How it works",
                   description:
                     "tRPC leverages TypeScript&apos;s type inference to automatically propagate your API types.",
                   features: [
@@ -174,7 +174,7 @@ export default function Home() {
                   color: "blue",
                 },
                 {
-                  title: "Key Benefits",
+                  title: "Key benefits",
                   description:
                     "Experience superior developer experience while maintaining high performance.",
                   features: [
@@ -238,7 +238,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center mb-12 relative">
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-destructive/10 rounded-full blur-2xl" />
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                The Problem with Traditional APIs
+                The problem with traditional APIs
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 Building type-safe APIs has traditionally been a complex and
@@ -248,7 +248,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Type Safety Gap",
+                  title: "Type safety gap",
                   description:
                     "The disconnect between frontend and backend types leads to runtime errors.",
                   features: [
@@ -261,7 +261,7 @@ export default function Home() {
                   color: "red",
                 },
                 {
-                  title: "Schema Overhead",
+                  title: "Schema overhead",
                   description:
                     "Traditional solutions require extensive schema definitions.",
                   features: [
@@ -338,7 +338,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center mb-12 relative">
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl" />
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                tRPC vs Alternatives
+                tRPC vs alternatives
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 Understanding how tRPC compares to other API architectures helps
@@ -476,7 +476,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center mb-12 relative">
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl" />
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                How tRPC Works
+                How tRPC works
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 tRPC uses TypeScript&apos;s type inference to create a seamless
@@ -486,7 +486,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "1. Define Procedures",
+                  title: "1. Define procedures",
                   description:
                     "Write your API endpoints as TypeScript functions",
                   features: [
@@ -499,7 +499,7 @@ export default function Home() {
                   color: "emerald",
                 },
                 {
-                  title: "2. Type Propagation",
+                  title: "2. Type propagation",
                   description: "Types automatically flow from server to client",
                   features: [
                     "Zero type definitions",
@@ -511,7 +511,7 @@ export default function Home() {
                   color: "emerald",
                 },
                 {
-                  title: "3. Client Usage",
+                  title: "3. Client usage",
                   description:
                     "Use your API with full type safety and autocompletion",
                   features: [
@@ -723,7 +723,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 py-8 h-full flex flex-col justify-center">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Real-World Example
+                Real-World example
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 See how tRPC transforms a typical CRUD application.
@@ -845,7 +845,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center mb-12 relative">
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Developer Experience
+                Developer experience
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 tRPC provides an unmatched developer experience that speeds up
@@ -855,7 +855,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "IDE Integration",
+                  title: "IDE integration",
                   description: "First-class IDE support with TypeScript",
                   features: [
                     "Rich autocompletion",
@@ -867,7 +867,7 @@ export default function Home() {
                   color: "purple",
                 },
                 {
-                  title: "Rapid Development",
+                  title: "Rapid development",
                   description: "Focus on business logic, not API plumbing",
                   features: [
                     "Zero boilerplate",
@@ -879,7 +879,7 @@ export default function Home() {
                   color: "purple",
                 },
                 {
-                  title: "Type Safety",
+                  title: "Type safety",
                   description: "Catch errors before they reach production",
                   features: [
                     "Compile-time checks",
@@ -944,7 +944,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center mb-12 relative">
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl" />
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                When to Use tRPC
+                When to use tRPC
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 Understanding when tRPC is the right choice for your project.
@@ -1028,7 +1028,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center mb-12 relative">
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
               <h2 className="text-4xl font-bold tracking-tight mb-6">
-                Get Started with tRPC
+                Get started with tRPC
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 Comprehensive documentation and resources to help you build
