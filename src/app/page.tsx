@@ -1,9 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { useEffect, useState, useRef } from "react";
-import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
@@ -120,9 +119,9 @@ export default function Home() {
                     Move Fast and{" "}
                     <span className="text-primary">Break Nothing</span>
                   </h1>
-                  <p className="text-lg text-muted-foreground">
-                    Build APIs with confidence using TypeScript's powerful type
-                    inference. No schemas, no code generation, just pure
+                  <p className="text-muted-foreground">
+                    Build APIs with confidence using TypeScript&apos;s powerful
+                    type inference. No schemas, no code generation, just pure
                     developer happiness.
                   </p>
                 </div>
@@ -154,10 +153,17 @@ export default function Home() {
               <h2 className="text-4xl font-bold tracking-tight mb-6">
                 What is tRPC?
               </h2>
-              <p className="text-xl text-muted-foreground mb-12">
-                tRPC is a modern approach to building APIs that prioritizes
-                developer experience and type safety.
+              <p className="text-muted-foreground">
+                Here&apos;s what you&apos;ll learn about tRPC&apos;s approach:
               </p>
+
+              {/* Feature list */}
+              <ul className="list-disc list-inside space-y-2 mt-4">
+                <li>End-to-end type safety without schemas</li>
+                <li>Automatic type inference</li>
+                <li>Zero runtime overhead</li>
+                <li>Great developer experience</li>
+              </ul>
             </div>
             <div className="grid lg:grid-cols-2 gap-8">
               {[
@@ -243,8 +249,22 @@ export default function Home() {
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 Building type-safe APIs has traditionally been a complex and
-                error-prone process.
+                error-prone process. Let&apos;s explore why it&apos;s
+                challenging.
               </p>
+
+              {/* Code example section */}
+              <div className="bg-muted p-4 rounded-lg">
+                <pre className="text-sm overflow-x-auto">
+                  <code>
+                    {`// Traditional API development challenges
+1. Manual type definitions
+2. Schema maintenance
+3. Type synchronization
+4. Runtime type checking`}
+                  </code>
+                </pre>
+              </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -480,7 +500,7 @@ export default function Home() {
                 How tRPC Works
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
-                tRPC uses TypeScript's type inference to create a seamless
+                tRPC uses TypeScript&apos;s type inference to create a seamless
                 bridge between your client and server.
               </p>
             </div>
@@ -621,40 +641,14 @@ export default function Home() {
                   <h3 className="text-2xl font-semibold mb-4">Client Side</h3>
                   <div className="bg-muted/50 rounded-lg p-6 font-mono text-sm">
                     <pre className="text-foreground">
-                      <span className="text-slate-500">
-                        // Use with full type safety
-                      </span>
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">user</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">getUser</span>.
-                      <span className="text-emerald-500">query</span>(
-                      <span className="text-orange-400">'123'</span>);
-                      {"\n\n"}
-                      <span className="text-slate-500">
-                        // TypeScript error if id is not a string
-                      </span>
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">error</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">getUser</span>.
-                      <span className="text-emerald-500">query</span>(
-                      <span className="text-purple-400">123</span>);
-                      {"\n\n"}
-                      <span className="text-slate-500">
-                        // Autocomplete for user properties
-                      </span>
-                      {"\n"}
-                      <span className="text-emerald-500">console</span>.
-                      <span className="text-emerald-500">log</span>(user.name);
+                      {`// Use with full type safety
+const user = await trpc.user.getUser.query('123');
+
+// TypeScript error if id is not a string
+const error = await trpc.user.getUser.query(123);
+
+// Autocomplete for user properties
+console.log(user.name);`}
                     </pre>
                   </div>
                 </div>
@@ -684,57 +678,22 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="bg-muted/50 rounded-lg p-6 font-mono text-sm">
                     <pre className="text-foreground">
-                      <span className="text-slate-500">// Define types</span>
-                      {"\n"}
-                      <span className="text-blue-500">interface</span>{" "}
-                      <span className="text-emerald-500">User</span> {"{"}
-                      {"\n  "}
-                      <span className="text-emerald-500">id</span>:{" "}
-                      <span className="text-blue-500">string</span>;{"\n  "}
-                      <span className="text-emerald-500">name</span>:{" "}
-                      <span className="text-blue-500">string</span>;{"\n"}
-                      {"}"}
-                      {"\n\n"}
-                      <span className="text-slate-500">
-                        // Define API endpoints
-                      </span>
-                      {"\n"}
-                      <span className="text-emerald-500">app</span>.
-                      <span className="text-emerald-500">get</span>(
-                      <span className="text-orange-400">'/api/users/:id'</span>,{" "}
-                      <span className="text-blue-500">async</span> (req, res){" "}
-                      {"=>"} {"{"}
-                      {"\n  "}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">user</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">db</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">findUnique</span>({"{"}
-                      ){"\n    "}where: {"{"} id: req.params.id {"}"}
-                      {"\n  "}
-                      {"}"});{"\n  "}
-                      <span className="text-emerald-500">res</span>.
-                      <span className="text-emerald-500">json</span>(user);
-                      {"\n"}
-                      {"}"});{"\n\n"}
-                      <span className="text-slate-500">// Client usage</span>
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">response</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">fetch</span>(
-                      <span className="text-orange-400">'/api/users/123'</span>
-                      );{"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">user</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">response</span>.
-                      <span className="text-emerald-500">json</span>();{"\n"}
-                      <span className="text-slate-500">// No type safety!</span>
+                      {`// Define types
+interface User {
+  id: string;
+  name: string;
+}
+
+// Define API endpoints
+app.get('/api/users/:id', async (req, res) => {
+  const user = await db.user.findUnique({
+    where: { id: req.params.id }
+  });
+  res.json(user);
+});
+
+// Client usage
+const response = await fetch('/api/users/123')`}
                     </pre>
                   </div>
                 </div>
@@ -744,46 +703,19 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="bg-muted/50 rounded-lg p-6 font-mono text-sm">
                     <pre className="text-foreground">
-                      <span className="text-slate-500">
-                        // Server procedure
-                      </span>
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">userRouter</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-emerald-500">router</span>({"{"}
-                      {"\n  "}
-                      <span className="text-emerald-500">getUser</span>:{" "}
-                      <span className="text-emerald-500">publicProcedure</span>
-                      {"\n    "}.<span className="text-emerald-500">input</span>
-                      (<span className="text-emerald-500">z</span>.
-                      <span className="text-emerald-500">string</span>())
-                      {"\n    "}.<span className="text-emerald-500">query</span>
-                      (<span className="text-blue-500">async</span> ({"{"}
-                      {" input "}
-                      {"}"}) {"=>"} {"{"}
-                      {"\n      "}
-                      <span className="text-blue-500">return</span>{" "}
-                      <span className="text-emerald-500">db</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">findUnique</span>({"{"}
-                      ){"\n        "}where: {"{"} id: input {"}"}
-                      {"\n      "}
-                      {"}"});{"\n    "}
-                      {"}"}){"\n"}
-                      {"}"});{"\n\n"}
-                      <span className="text-slate-500">// Client usage</span>
-                      {"\n"}
-                      <span className="text-blue-500">const</span>{" "}
-                      <span className="text-emerald-500">user</span>{" "}
-                      <span className="text-blue-500">=</span>{" "}
-                      <span className="text-blue-500">await</span>{" "}
-                      <span className="text-emerald-500">trpc</span>.
-                      <span className="text-emerald-500">user</span>.
-                      <span className="text-emerald-500">getUser</span>.
-                      <span className="text-emerald-500">query</span>(
-                      <span className="text-orange-400">'123'</span>);{"\n"}
-                      <span className="text-slate-500">// Fully typed! ✨</span>
+                      {`// Server & client types are in sync
+const userRouter = router({
+  getUser: publicProcedure
+    .input(z.string())
+    .query(async ({ input }) => {
+      return db.user.findUnique({
+        where: { id: input }
+      });
+    })
+});
+
+// Type-safe client usage
+const user = await trpc.user.getUser.query('123');`}
                     </pre>
                   </div>
                 </div>
@@ -1039,6 +971,17 @@ export default function Home() {
                   </span>
                 </div>
               </a>
+            </div>
+
+            {/* Documentation links */}
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold mb-4">Learn More</h3>
+              <div className="space-y-2">
+                <p>
+                  Check out our comprehensive documentation to get started with
+                  tRPC&apos;s powerful features.
+                </p>
+              </div>
             </div>
           </div>
         </section>
