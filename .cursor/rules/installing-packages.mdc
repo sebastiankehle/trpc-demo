@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+- Always use `pnpm`.
+- Do not use any other package manager.
+
+```sh
+pnpm add ...
+
+```
+

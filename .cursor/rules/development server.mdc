@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+- Do not start the development server, it is already running.
+
+```sh
+pnpm run dev ...
+```
