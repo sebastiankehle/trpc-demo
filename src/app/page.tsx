@@ -163,7 +163,7 @@ export default function Home() {
                 {
                   title: "How it Works",
                   description:
-                    "tRPC leverages TypeScript's type inference to automatically propagate your API types.",
+                    "tRPC leverages TypeScript&apos;s type inference to automatically propagate your API types.",
                   features: [
                     "Define your API procedures on the server",
                     "TypeScript automatically infers the types",
@@ -610,19 +610,9 @@ export default function Home() {
                       {"\n      "}
                       {"}"});{"\n    "}
                       {"}"}){"\n"}
-                      {"}"});
-                    </pre>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4">Client Side</h3>
-                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
-                    <pre>
-                      <span className="text-slate-500">
-                        // Use with full type safety
-                      </span>
+                      {"}"});{"\n"}
+                      {"\n"}
+                      {/* Use with full type safety */}
                       {"\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">user</span>{" "}
@@ -632,11 +622,10 @@ export default function Home() {
                       <span className="text-emerald-500">user</span>.
                       <span className="text-emerald-500">getUser</span>.
                       <span className="text-emerald-500">query</span>(
-                      <span className="text-orange-400">'123'</span>);
-                      {"\n\n"}
-                      <span className="text-slate-500">
-                        // TypeScript error if id is not a string
-                      </span>
+                      <span className="text-orange-400">&apos;123&apos;</span>);
+                      {"\n"}
+                      {"\n"}
+                      {/* TypeScript error if id is not a string */}
                       {"\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">error</span>{" "}
@@ -647,10 +636,73 @@ export default function Home() {
                       <span className="text-emerald-500">getUser</span>.
                       <span className="text-emerald-500">query</span>(
                       <span className="text-purple-400">123</span>);
-                      {"\n\n"}
-                      <span className="text-slate-500">
-                        // Autocomplete for user properties
-                      </span>
+                      {"\n"}
+                      {"\n"}
+                      {/* Autocomplete for user properties */}
+                      {"\n"}
+                      <span className="text-emerald-500">console</span>.
+                      <span className="text-emerald-500">log</span>(user.name);
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4">Client Side</h3>
+                  <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
+                    <pre>
+                      <span className="text-blue-500">const</span>{" "}
+                      <span className="text-emerald-500">userRouter</span>{" "}
+                      <span className="text-blue-500">=</span>{" "}
+                      <span className="text-emerald-500">router</span>({"{"}
+                      {"\n  "}
+                      <span className="text-emerald-500">getUser</span>:{" "}
+                      <span className="text-emerald-500">publicProcedure</span>
+                      {"\n    "}.<span className="text-emerald-500">input</span>
+                      (<span className="text-emerald-500">z</span>.
+                      <span className="text-emerald-500">string</span>())
+                      {"\n    "}.<span className="text-emerald-500">query</span>
+                      (<span className="text-blue-500">async</span> ({"{"}
+                      {" input "}
+                      {"}"}) {"=>"} {"{"}
+                      {"\n      "}
+                      <span className="text-blue-500">return</span>{" "}
+                      <span className="text-emerald-500">db</span>.
+                      <span className="text-emerald-500">user</span>.
+                      <span className="text-emerald-500">findUnique</span>({"{"}
+                      {"\n        "}where: {"{"} id: input {"}"}
+                      {"\n      "}
+                      {"}"});{"\n    "}
+                      {"}"}){"\n"}
+                      {"}"});{"\n"}
+                      {"\n"}
+                      {/* Use with full type safety */}
+                      {"\n"}
+                      <span className="text-blue-500">const</span>{" "}
+                      <span className="text-emerald-500">user</span>{" "}
+                      <span className="text-blue-500">=</span>{" "}
+                      <span className="text-blue-500">await</span>{" "}
+                      <span className="text-emerald-500">trpc</span>.
+                      <span className="text-emerald-500">user</span>.
+                      <span className="text-emerald-500">getUser</span>.
+                      <span className="text-emerald-500">query</span>(
+                      <span className="text-orange-400">&apos;123&apos;</span>);
+                      {"\n"}
+                      {"\n"}
+                      {/* TypeScript error if id is not a string */}
+                      {"\n"}
+                      <span className="text-blue-500">const</span>{" "}
+                      <span className="text-emerald-500">error</span>{" "}
+                      <span className="text-blue-500">=</span>{" "}
+                      <span className="text-blue-500">await</span>{" "}
+                      <span className="text-emerald-500">trpc</span>.
+                      <span className="text-emerald-500">user</span>.
+                      <span className="text-emerald-500">getUser</span>.
+                      <span className="text-emerald-500">query</span>(
+                      <span className="text-purple-400">123</span>);
+                      {"\n"}
+                      {"\n"}
+                      {/* Autocomplete for user properties */}
                       {"\n"}
                       <span className="text-emerald-500">console</span>.
                       <span className="text-emerald-500">log</span>(user.name);
@@ -683,7 +735,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
                     <pre>
-                      <span className="text-slate-500">// Define types</span>
+                      {/* Define types */}
                       {"\n"}
                       <span className="text-blue-500">interface</span>{" "}
                       <span className="text-emerald-500">User</span> {"{"}
@@ -694,9 +746,7 @@ export default function Home() {
                       <span className="text-blue-500">string</span>;{"\n"}
                       {"}"}
                       {"\n\n"}
-                      <span className="text-slate-500">
-                        // Define API endpoints
-                      </span>
+                      {/* Define API endpoints */}
                       {"\n"}
                       <span className="text-emerald-500">app</span>.
                       <span className="text-emerald-500">get</span>(
@@ -718,7 +768,7 @@ export default function Home() {
                       <span className="text-emerald-500">json</span>(user);
                       {"\n"}
                       {"}"});{"\n\n"}
-                      <span className="text-slate-500">// Client usage</span>
+                      {/* Client usage */}
                       {"\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">response</span>{" "}
@@ -736,9 +786,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="bg-[#1c1c1c] rounded-lg p-6 font-mono text-sm">
                     <pre>
-                      <span className="text-slate-500">
-                        // Server & client types are in sync
-                      </span>
+                      {/* Server & client types are in sync */}
                       {"\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">userRouter</span>{" "}
@@ -764,9 +812,7 @@ export default function Home() {
                       {"}"});{"\n    "}
                       {"}"}){"\n"}
                       {"}"});{"\n\n"}
-                      <span className="text-slate-500">
-                        // Type-safe client usage
-                      </span>
+                      {/* Type-safe client usage */}
                       {"\n"}
                       <span className="text-blue-500">const</span>{" "}
                       <span className="text-emerald-500">user</span>{" "}
@@ -776,7 +822,7 @@ export default function Home() {
                       <span className="text-emerald-500">user</span>.
                       <span className="text-emerald-500">getUser</span>.
                       <span className="text-emerald-500">query</span>(
-                      <span className="text-orange-400">'123'</span>);
+                      <span className="text-orange-400">&apos;123&apos;</span>);
                     </pre>
                   </div>
                 </div>
