@@ -750,8 +750,10 @@ export default function Home() {
                       {"\n"}
                       <span className="text-emerald-500">app</span>.
                       <span className="text-emerald-500">get</span>(
-                      <span className="text-orange-400">'/api/users/:id'</span>,{" "}
-                      <span className="text-blue-500">async</span> (req, res){" "}
+                      <span className="text-orange-400">
+                        &apos;/api/users/:id&apos;
+                      </span>
+                      , <span className="text-blue-500">async</span> (req, res){" "}
                       {"=>"} {"{"}
                       {"\n  "}
                       <span className="text-blue-500">const</span>{" "}
@@ -775,7 +777,9 @@ export default function Home() {
                       <span className="text-blue-500">=</span>{" "}
                       <span className="text-blue-500">await</span>{" "}
                       <span className="text-emerald-500">fetch</span>(
-                      <span className="text-orange-400">'/api/users/123'</span>
+                      <span className="text-orange-400">
+                        &apos;/api/users/123&apos;
+                      </span>
                       );
                     </pre>
                   </div>
